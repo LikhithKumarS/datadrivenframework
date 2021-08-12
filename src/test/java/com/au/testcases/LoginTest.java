@@ -9,7 +9,8 @@ public class LoginTest extends TestBase {
 
 	@Test
 	public void login() {
-		
+		log.debug("Inside login test");
+
 		driver.findElement(By.xpath("login")).click();
 		
 	}
