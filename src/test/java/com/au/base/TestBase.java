@@ -6,32 +6,34 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 public class TestBase {
 
 	public static WebDriver driver;
-	public static Properties config;
-	public static Properties or;
+	public static Properties config =new Properties();
+	public static Properties or  =new Properties();;
 	public static FileInputStream fis;
 
 	@BeforeSuite
 	public void setUp() throws IOException {
 		if (driver == null) {
-			fis = new FileInputStream(System.getProperty("user.dir")
-					+ "\\src\\test\\resources\\properties\\Config.properties");
+			fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\properties\\Config.properties");
 			config.load(fis);
-			fis = new FileInputStream(
-					System.getProperty("user.dir") + "\\src\\test\\resources\\properties\\OR.properties");
+			fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\properties\\OR.properties");
 			or.load(fis);
 
 			if (config.getProperty("browser").equals("chrome")) {
 				System.setProperty("webdriver.chrome.driver",
-						System.getProperty("user.dir") + "\\src\\test\\executables\\chromedriver.exe");
+						System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
+				driver=new ChromeDriver();
+
 
 			} else if (config.getProperty("browser").equals("firefox")) {
 				System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+				driver=new ChromeDriver();
 
 			}
 			driver.get(config.getProperty("testsiteurl"));
