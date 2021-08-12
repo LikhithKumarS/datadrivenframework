@@ -1,0 +1,5 @@
+17:23:38,456 DEBUG devpinoyLogger:27 - cofigfileloaded
+17:23:38,461 DEBUG devpinoyLogger:31 - or file loaded
+17:23:41,866 DEBUG devpinoyLogger:37 - chrome launched
+17:23:48,829 DEBUG devpinoyLogger:12 - Inside login test
+17:23:54,534 DEBUG devpinoyLogger:60 - test execution completed
