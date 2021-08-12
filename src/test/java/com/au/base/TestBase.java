@@ -3,7 +3,6 @@ package com.au.base;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -43,10 +42,11 @@ public class TestBase {
 				driver = new ChromeDriver();
 
 			}
-			driver.get(config.getProperty("testsiteurl"));
+			
+			driver.get(config.getProperty("url"));
+			System.out.println(config.getProperty("url"));
 			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")),
-					TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")),TimeUnit.SECONDS);
 
 		}
 

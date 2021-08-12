@@ -11,7 +11,7 @@ public class LoginTest extends TestBase {
 	public void login() {
 		log.debug("Inside login test");
 
-		driver.findElement(By.xpath("login")).click();
+		driver.findElement(By.cssSelector("login_btn")).click();
 		
 	}
 }
