@@ -28,7 +28,7 @@ public class TestProperties {
 		
 		
 		driver = new ChromeDriver();
-		driver.get("www.google.com");
+		driver.get("https://www.google.com");
 
 	}
 
